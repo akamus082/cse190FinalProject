@@ -25,7 +25,7 @@ from kalman2d import Kalman2D
 """initialize old Kalman Filter"""
 kalman = Kalman2D()
 
-myCamera0 = Camera.Camera('video2.mp4', "video.avi")
+myCamera0 = Camera.Camera('../Media/video2.mp4', "video.avi")
 #myCamera0 = Camera.Camera(0, "cam0.avi")
 winName = "0", "1"
 

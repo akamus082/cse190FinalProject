@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import cv2
 import cv2.cv as cv
@@ -49,7 +47,7 @@ f1.x = np.array([[0,0,0,0]]).T
 f1.P = np.eye(4)*500
 # print(f1.P)
 
-myCamera0 = Camera.Camera('forest.mp4', "cam0.avi")
+myCamera0 = Camera.Camera('../Media/forest.mp4', "cam0.avi")
 #myCamera0 = Camera.Camera(0, "cam0.avi")
 winName = "0", "1"
 
