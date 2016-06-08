@@ -1,19 +1,3 @@
-def drawCross(img, center, r, g, b):
-    '''
-    Draws a cross a the specified X,Y coordinates with color RGB
-    '''
-
-    d = 5
-    t = 2
-
-    color = (r, g, b)
-
-    ctrx = center[0]
-    ctry = center[1]
-
-    cv2.line(img, (ctrx - d, ctry - d), (ctrx + d, ctry + d), color, t, cv2.CV_AA)
-    cv2.line(img, (ctrx + d, ctry - d), (ctrx - d, ctry + d), color, t, cv2.CV_AA)
-
 import numpy as np
 import cv2
 import cv2.cv as cv
@@ -60,7 +44,7 @@ while myCamera0.isOn():
 
 
 	if((x != -1) | (y != -1)):
-		drawCross(frame, (x, y), 0, 0, 255)
+		ta.drawCross(frame, (x, y), 0, 0, 255)
 		kalman.update(x,y)
 		prev_x = x
 		prev_y = y
@@ -71,8 +55,8 @@ while myCamera0.isOn():
 	x_prediction,y_prediction = kalman.getPrediction()
 	x_estimate,y_estimate = kalman.getEstimate()
 
-	drawCross(frame, (int(x_prediction),int(y_prediction)), 255, 0, 0)
-	drawCross(frame, (int(x_estimate),int(y_estimate)), 0, 255, 0)
+	ta.drawCross(frame, (int(x_prediction),int(y_prediction)), 255, 0, 0)
+	ta.drawCross(frame, (int(x_estimate),int(y_estimate)), 0, 255, 0)
 
 	cv2.imshow( winName[0], frame )
 	# cv2.imshow( winName[1], img)
